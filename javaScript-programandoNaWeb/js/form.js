@@ -1,28 +1,43 @@
 var botaoAdicionar = document.querySelector("#adicionar-bovino");
 botaoAdicionar.addEventListener("click", function (event) /*function recebe como parâmetro o event */ { 
     event.preventDefault(); //previne comportamento padrão
-
+    
     var form = document.querySelector("#form-adiciona");
     
-    var id = form.id.value;
-    var sexo = form.sexo.value;
-    var nascimento = form.nascimento.value;
-    var peso = form.peso.value;
-    var pesoEmArrobas = calculaPesoEmArrobas(peso);
+    var bovino = montaBovino(form);
     
-    var bovinoTr = document.createElement("tr");
-    var idTd = document.createElement("td");
-    var sexoTd = document.createElement("td");
-    var nascimentoTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var pesoArrobaTd = document.createElement("td");
-    var valorTd = document.createElement("td");
+    if(!validaPeso(bovino.peso)){
+        alert("dados com erro");
+        return;
+    }
+    var bovinoTr = montaTr(bovino);
+    var tabela = document.querySelector("#corpo-tabela");
+    tabela.appendChild(bovinoTr);
+    form.reset();
 
-    idTd.textContent = id;
-    sexoTd.textContent = sexo;
-    nascimentoTd.textContent = nascimento;
-    pesoTd.textContent = peso;
-    pesoArrobaTd.textContent = pesoEmArrobas;
+});
+
+function montaBovino(form){
+    var bovino = {
+        id: form.id.value,
+        sexo: form.sexo.value,
+        nascimento: form.nascimento.value,
+        peso: form.peso.value,
+        pesoEmArrobas: calculaPesoEmArrobas(form.peso.value)
+    }
+    return bovino;
+}
+
+function montaTr(bovino){
+    var bovinoTr = document.createElement("tr");
+    bovinoTr.classList.add("bovino");
+    
+    var idTd = montarTd(bovino.id, "id");
+    var sexoTd = montarTd(bovino.sexo, "sexo");
+    var nascimentoTd = montarTd(bovino.nascimento, "nascimento");
+    var pesoTd = montarTd(bovino.peso, "peso-kg" );
+    var pesoArrobaTd = montarTd(bovino.pesoEmArrobas, "peso-arroba");
+    var valorTd = montarTd(0, "valor");
 
     bovinoTr.appendChild(idTd);
     bovinoTr.appendChild(sexoTd);
@@ -31,6 +46,12 @@ botaoAdicionar.addEventListener("click", function (event) /*function recebe como
     bovinoTr.appendChild(pesoArrobaTd);
     bovinoTr.appendChild(valorTd);
 
-    var tabela = document.querySelector("#corpo-tabela");
-    tabela.appendChild(bovinoTr);
-});
+    return bovinoTr;
+}
+
+function montarTd(dado, classe){
+    var td = document.createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
+    return td;
+}
