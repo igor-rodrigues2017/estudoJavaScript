@@ -1,0 +1,88 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registro de Bovinos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="titulo-principal">Lista de Cadastro de Bovinos (Treino de js)</h1>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Lista</h2>
+
+            <form id="form-valorArroba">
+                <label for="valorArroba"></label>
+                <input name="valorArroba" type="number" placeholder="valorArroba">
+                <button type="button" id="botao-calcular">Calcular</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Sexo</th>
+                        <th>Nascimento</th>
+                        <th>Peso (Kg)</th>
+                        <th>Peso (@)</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela">
+                    <tr class="bovino">
+                        <td class="id">1</td>
+                        <td class="sexo">Macho</td>
+                        <td class="nascimento">20/05/2018</td>
+                        <td class="peso-kg">20000</td>
+                        <td class="peso-arroba">0</td>
+                        <td class="valor">10,00</td>
+                    </tr>
+
+                    <tr class="bovino">
+                        <td class="id">2</td>
+                        <td class="sexo">Femea</td>
+                        <td class="nascimento">20/05/2018</td>
+                        <td class="peso-kg">150</td>
+                        <td class="peso-arroba">0</td>
+                        <td class="valor">10,00</td>
+                    </tr>
+                </tbody>
+                
+            </table>    
+        </section>
+    </main>
+    <section class="container">
+            <h2>Adicionar Bovino</h2>
+            <form id="form-adiciona">
+                <div class="in-form">
+                    <label for="id">Id</label>
+                    <input name="id" placeholder="entre com o id" type="number">
+                </div>
+                <div class="in-form">
+                    <label for="sexo">Sexo</label>
+                    <select name="sexo">
+                            <option value="Macho">Macho</option>
+                            <option value="Femea">Femea</option>
+                          </select>
+                          
+                </div>
+                <div class="in-form">
+                    <label for="nascimento">Nascimento</label>
+                    <input name="nascimento" placeholder="inserir data nascimento">
+                </div>
+                <div class="in-form">
+                    <label for="peso">Peso</label>
+                    <input name="peso" placeholder="inserir peso em Kg" type="number">
+                </div>
+                <button id="adicionar-bovino">Adiconar</button>
+    </section>
+</body>
+<script src="js/main.js"></script>
+</html>

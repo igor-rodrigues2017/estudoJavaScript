@@ -1,0 +1,75 @@
+*{
+	box-sizing: border-box;
+ }
+
+body{
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+header{
+	background-color: #333;
+	height: 3em;
+	color: #FFF;
+	margin-bottom: 1em;
+}
+
+header h1{
+	font-size: 2em;
+	display:inline-block;
+    vertical-align:	middle;
+    padding: auto;
+}
+
+header h2{
+	font-size: 2em;
+	display:inline-block;
+	vertical-align:	middle;
+}
+
+h2{
+    font-size: 1.5em;
+}
+
+table{
+	width: 100%;
+	margin-bottom : .5em;
+    table-layout: fixed;
+}
+
+td, th{
+    padding: .7em;
+	margin: 0;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+th{
+    font-weight: bold;
+    background-color: #EEE;
+}
+
+h1{
+    font-size: 2em;
+	display:inline-block;
+	vertical-align:	middle;
+}
+
+.container{
+    width: 60%;
+	margin: 0 auto;
+}
+
+.invalido{
+	background-color: lightcoral;
+	color: darkred;
+	font-weight: bold;
+}
+
+input{
+	height: 2em;
+}
+
+.in-form{
+	margin: 1em;
+}
