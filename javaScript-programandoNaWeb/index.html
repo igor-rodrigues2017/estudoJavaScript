@@ -63,26 +63,26 @@
             <form id="form-adiciona">
                 <div class="in-form">
                     <label for="id">Id</label>
-                    <input name="id" placeholder="entre com o id" type="number">
+                    <input name="id" placeholder="entre com o id" type="number" required>
                 </div>
                 <div class="in-form">
                     <label for="sexo">Sexo</label>
-                    <select name="sexo">
+                    <select name="sexo" required>
                             <option value="Macho">Macho</option>
                             <option value="Femea">Femea</option>
                           </select>
-                          
                 </div>
                 <div class="in-form">
                     <label for="nascimento">Nascimento</label>
-                    <input name="nascimento" placeholder="inserir data nascimento">
+                    <input name="nascimento" placeholder="inserir data nascimento" type="date" required>
                 </div>
                 <div class="in-form">
                     <label for="peso">Peso</label>
-                    <input name="peso" placeholder="inserir peso em Kg" type="number">
+                    <input name="peso" placeholder="inserir peso em Kg" type="number" required>
                 </div>
                 <button id="adicionar-bovino">Adiconar</button>
     </section>
 </body>
-<script src="js/main.js"></script>
+<script src="js/calcula-dados.js"></script>
+<script src="js/form.js"></script>
 </html>
