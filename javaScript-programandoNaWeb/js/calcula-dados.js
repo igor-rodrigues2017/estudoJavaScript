@@ -18,10 +18,10 @@ function trataBovinos(){
         var pesoKg = bovino.querySelector(".peso-kg").textContent;
         var tagPesoEmArrobas = bovino.querySelector(".peso-arroba");
         if(validaPeso(pesoKg)) {
+            tagPesoEmArrobas.textContent = calculaPesoEmArrobas(pesoKg);
+        }else{
             tagPesoEmArrobas.textContent = "Peso é inválido!";
             bovino.classList.add("invalido");
-        }else{
-            tagPesoEmArrobas.textContent = calculaPesoEmArrobas(pesoKg);
         }
     });
 }

@@ -6,16 +6,31 @@ botaoAdicionar.addEventListener("click", function (event) /*function recebe como
     
     var bovino = montaBovino(form);
     
-    if(!validaPeso(bovino.peso)){
-        alert("dados com erro");
+    var erros = validaBovino(bovino);
+
+    if(erros.length > 0){
+        exibeMensagensErros(erros);
         return;
     }
     var bovinoTr = montaTr(bovino);
     var tabela = document.querySelector("#corpo-tabela");
     tabela.appendChild(bovinoTr);
     form.reset();
+    document.querySelector("#erros").classList.add("hidden");
 
 });
+
+function exibeMensagensErros(erros){
+    var mensagens = document.querySelector("#erros");
+        mensagens.innerHTML = ""; //deixa o conteúdo de texto vazio 
+        mensagens.classList.remove("hidden");
+        erros.forEach(erro => {
+            var tagLi = document.createElement("li");
+            tagLi.textContent = erro;
+            tagLi.classList.add("erro");   
+            mensagens.appendChild(tagLi);
+        });
+}
 
 function montaBovino(form){
     var bovino = {
@@ -26,6 +41,13 @@ function montaBovino(form){
         pesoEmArrobas: calculaPesoEmArrobas(form.peso.value)
     }
     return bovino;
+}
+
+function montarTd(dado, classe){
+    var td = document.createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
+    return td;
 }
 
 function montaTr(bovino){
@@ -47,11 +69,4 @@ function montaTr(bovino){
     bovinoTr.appendChild(valorTd);
 
     return bovinoTr;
-}
-
-function montarTd(dado, classe){
-    var td = document.createElement("td");
-    td.textContent = dado;
-    td.classList.add(classe);
-    return td;
 }

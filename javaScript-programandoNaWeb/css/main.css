@@ -73,3 +73,11 @@ input{
 .in-form{
 	margin: 1em;
 }
+
+.hidden{
+	display: none;
+}
+
+.erro{
+	color: red;
+}

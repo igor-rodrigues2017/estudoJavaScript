@@ -60,30 +60,33 @@
     </main>
     <section class="container">
             <h2>Adicionar Bovino</h2>
+            <ul class="hidden" id="erros">
+                
+            </ul>
             <form id="form-adiciona">
                 <div class="in-form">
                     <label for="id">Id</label>
-                    <input name="id" placeholder="entre com o id" type="number" required>
+                    <input name="id" placeholder="entre com o id" type="number">
                 </div>
                 <div class="in-form">
                     <label for="sexo">Sexo</label>
-                    <select name="sexo" required>
+                    <select name="sexo">
                             <option value="Macho">Macho</option>
                             <option value="Femea">Femea</option>
                           </select>
                 </div>
                 <div class="in-form">
                     <label for="nascimento">Nascimento</label>
-                    <input name="nascimento" placeholder="inserir data nascimento" type="date" required>
+                    <input name="nascimento" placeholder="inserir data nascimento" type="date">
                 </div>
                 <div class="in-form">
                     <label for="peso">Peso</label>
-                    <input name="peso" placeholder="inserir peso em Kg" type="number" required>
+                    <input name="peso" placeholder="inserir peso em Kg" type="number">
                 </div>
                 <button id="adicionar-bovino">Adiconar</button>
     </section>
 </body>
+<script src="js/validacao.js"></script>
 <script src="js/calcula-dados.js"></script>
 <script src="js/form.js"></script>
-<script src="js/validacao.js"></script>
 </html>
