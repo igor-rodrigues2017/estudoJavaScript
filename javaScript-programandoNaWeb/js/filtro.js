@@ -8,7 +8,7 @@ campoFiltra.addEventListener("input", function () {
         let tdId = bovino.querySelector(".id");
         let bovinoId = tdId.textContent;
 
-        let expressao = new RegExp(this.value, "i"); //expressão regular recebe como parâmetros: o valor, caseSencive
+        let expressao = new RegExp(this.value, "i"); //expressão regular recebe como parâmetros: o valor, caseSensive
 
         if (this.value.length > 0) {
             if (!expressao.test(bovinoId)) {
