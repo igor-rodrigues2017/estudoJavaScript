@@ -1,6 +1,3 @@
-var bovinos = buscaBovinos();
-
-
 //duplo Clique remove o bovino: Remover colocando um Escutador no elemento pai:
 
 var tabela = document.querySelector("table");
