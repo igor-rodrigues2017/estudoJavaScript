@@ -40,3 +40,4 @@ botaoCalcular.addEventListener("click", function(event){
         valorBovino.textContent = valorArroba * pesoEmArrobas;
     })
 });
+
